@@ -24,10 +24,20 @@
 </head>
 <body>
     {{-- Navbar --}}
-
+        @include('navbar')
+        @yield('navbar')
+        @yield('navcss')
     {{-- Content --}}
-    <div class="margin-top-for-navbar">
+    <div class="margin-top-for-navbar" id="content">
         @yield('content')
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
+        
     </div>
     {{-- Footer --}}
     
