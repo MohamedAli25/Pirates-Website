@@ -41,7 +41,6 @@
         sidebar.style.width = "40%";
         body.style.marginLeft = "40%";
         body.style.backgroundColor = "rgba(0,0,0,0.4)";
-
     }
 </script>
 

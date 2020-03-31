@@ -1,0 +1,13 @@
+.footer{
+    height: 150px;
+    font-size: 24px;
+}
+.footer-row{
+    justify-content: center; 
+    padding-top: 50px;
+}
+.footer-row a{
+    padding: 10px;
+    color: white;
+    z-index: 1;
+}
