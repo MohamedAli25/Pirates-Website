@@ -24,9 +24,7 @@
 </head>
 <body>
     {{-- Navbar --}}
-        @include('navbar')
-        @yield('navbar')
-        @yield('navcss')
+    <x-navbar />
     {{-- Content --}}
     <div class="margin-top-for-navbar" id="content">
         @yield('content')
@@ -38,9 +36,7 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aliquam, doloribus aperiam dolor animi voluptatem consequatur voluptatum illo harum nemo iure doloremque, laborum veritatis eaque rem. Doloribus maxime architecto natus!</p>
     {{-- Footer --}}
-        @include('footer')
-        @yield('footer')
-        @yield('footercss')
+    <x-footer />
     </div>
     {{-- External Libraries --}}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
