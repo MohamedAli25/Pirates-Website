@@ -13,17 +13,17 @@
             <li class="nav-item"><a href="#" class="nav-link">Sign Up</a></li>
         </ul>
     </div>
-    <button class="btn  d-md-none" onclick="opensidebar()"><i class="fa fa-bars"></i>
+    <button class="btn bars d-md-none" onclick="opensidebar()"><i class="fa fa-bars"></i>
     </button>
 </nav>
-<nav class="navbar" id="sidenavbar">
-    <ul class="nav flex-column">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Committess</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sign In</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Sign Up</a></li>
+<nav class="sidenav" id="sidenavbar">
+    <ul class="nav flex-column sidenavbar">
+        <li><a href="#"class="nav-link">Home</a></li>
+        <li><a href="#"class="nav-link">Events</a></li>
+        <li><a href="#"class="nav-link">Committess</a></li>
+        <li><a href="#"class="nav-link">About</a></li>
+        <li><a href="#"class="nav-link">Sign In</a></li>
+        <li><a href="#"class="nav-link">Sign Up</a></li><br>
     </ul>
 </nav>
 <link rel="stylesheet" href="/css/Shared/navbar.css">
@@ -31,8 +31,7 @@
     function opensidebar(){
         var sidebar = document.getElementById('sidenavbar');
         var body = document.getElementById('content');
-        sidebar.style.width = "40%";
-        body.style.marginLeft = "40%";
+        sidebar.style.width = "60%";
         body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
 </script>
