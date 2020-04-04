@@ -12,13 +12,10 @@ width: 100px;
 	height: 100%;
 	width: 0;
 	z-index: 1;
-	top: 0;
-	left: 0;
 	background-color: #F5F5F5;
 	overflow-x: hidden;
-	transition: 0.7s;
+	transition: 0.9s;
 	padding: 0;
-	float: left;
 	position: fixed;
 
 }
@@ -30,12 +27,70 @@ width: 100px;
 	padding: 10px;
 	padding-left: 20px;
 	letter-spacing: 2px;
-	word-wrap: none;
-	font-size: 20px;
+	white-space: nowrap;
+	font-size: 18px;
 }
 #sidenavbar a{
 	color: purple;
 }
 .bars{
-	font-size: 24px;
+	font-size: 20px;
 }
+.tracking{
+	-webkit-animation: tracking 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes tracking{
+	0% {
+	  letter-spacing: -0.5em;
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0.6;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+
+.trackingo{
+	-webkit-animation: trackingo 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: trackingo 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+  @keyframes tracking{
+	0% {
+	  letter-spacing: -0.5em;
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0.6;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+
+  @-webkit-keyframes trackingo{
+	0% {
+	  opacity: 1;
+	}
+	50% {
+	  opacity: 1;
+	}
+	100% {
+	  letter-spacing: -0.5em;
+	  opacity: 0;
+	}
+  }
+  @keyframes trackingo{
+	0% {
+	  opacity: 1;
+	}
+	50% {
+	  opacity: 1;
+	}
+	100% {
+	  letter-spacing: -0.5em;
+	  opacity: 0;
+	}
+  }
