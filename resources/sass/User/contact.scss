@@ -1,57 +1,67 @@
-.clr{
+.clr {
     clear: both;
 }
-h1{
+
+h1 {
     text-align: center;
-    color:  #744ba3 ;
+    color: #744ba3;
     text-decoration: underline;
     letter-spacing: 5px;
     margin-top: 10px;
 }
-.president{
+
+.president {
     background-color: #ffffff;
     margin-top: 20px;
-    width: 100%;   
+    width: 100%;
 }
-.img img{
-    width: 250px;
-    height: 250px;
+
+.img img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     float: left;
     margin: 20px 0px 20px 50px;
 }
-.text{
+
+.text {
     margin-left: 350px;
     padding-top: 50px;
     width: 600px;
     height: 300px;
     color: #000;
 }
-.text h2{
+
+.text h2 {
     text-decoration: underline;
-    color:  #744ba3 ;
+    color: #744ba3;
     letter-spacing: 5px;
 }
-.head-pr{
+
+.head-pr {
     background-color: #f5f5f5;
     margin-top: 20px;
     width: 100%;
 }
-.head-fr{
+
+.head-fr {
     background-color: #fff;
     margin-top: 20px;
     width: 100%;
 }
-@media(max-width:600px){
-    h1{
+
+@media(max-width:600px) {
+    h1 {
         padding: 0px;
     }
-    .img img{
+
+    .img img {
         float: none;
         display: block;
-        margin:20px;
+        margin: 20px;
     }
-    .text{
+
+    .text {
         margin: 20px;
         width: 100%;
     }

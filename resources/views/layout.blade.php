@@ -17,6 +17,7 @@
     {{-- Internal Libraries --}}
     <link rel="stylesheet" href="/css/Shared/bootstrap.css">
     <link rel="stylesheet" href="/css/Shared/shared.css">
+    <link rel="stylesheet" href="/css/Shared/navbar.css">
     @yield('css')
 
     {{-- Icon --}}
@@ -25,16 +26,20 @@
 <body>
     {{-- Navbar --}}
     <x-navbar/>
+
+    {{-- Margin for the navbar --}}
+    <div style="width: 100%;height: 80px"></div>
     {{-- Content --}}
-    <div class="margin-top-for-navbar" id="content">
+    <div id="content">
         @yield('content')
         {{-- Footer --}}
-        <x-footer/>
+        {{-- <x-footer/> --}}
     </div>
     {{-- External Libraries --}}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
     {{-- Internal Libraries --}}
+    <script src="{{ asset('js/Shared/navbar.js') }}"></script>
     @yield('js')
 </body>
 </html>

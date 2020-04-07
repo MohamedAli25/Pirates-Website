@@ -13,7 +13,7 @@
             <li class="nav-item"><a href="#" class="nav-link">Sign Up</a></li>
         </ul>
     </div>
-    <button class="btn bars d-md-none" onclick="opensidebar()"><i class="fa fa-bars"></i>
+    <button class="btn bars d-md-none"><i class="fa fa-bars"></i>
     </button>
 </nav>
 <nav class="sidenav" id="sidenavbar" style="width: 0%;">
@@ -26,32 +26,7 @@
         <li class="sidebartext"><a href="#">Sign Up</a></li>
     </ul>
 </nav>
-<link rel="stylesheet" href="/css/Shared/navbar.css">
-<script>
-    function opensidebar(){
-        if(document.getElementById('sidenavbar').style.width === '0%'){
-        var sidebar = document.getElementById('sidenavbar');
-        var body = document.getElementById('content');
-        sidebar.style.width = "60%";
-        body.style.backgroundColor = "rgba(0,0,0,0.4)";
-       
-        var elements = document.getElementsByClassName('sidebartext');
-        for(var i=0; i<elements.length; i++) { 
-            elements[i].classList.add('tracking');
-            elements[i].classList.remove('trackingo');
-        }
-        
-        }else{
-        var sidebar = document.getElementById('sidenavbar');
-        var body = document.getElementById('content');
-        sidebar.style.width = "0%";
-        body.style.backgroundColor = "rgba(0,0,0,0)";
-        var elements = document.getElementsByClassName('sidebartext');
-        for(var i=0; i<elements.length; i++) { 
-            elements[i].classList.remove('tracking');
-            elements[i].classList.add('trackingo');
-        }         
-        }
-    }
-</script>
+<div class="dark-layer">
+
+</div>
 </div>
