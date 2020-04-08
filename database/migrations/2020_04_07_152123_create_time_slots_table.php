@@ -15,6 +15,9 @@ class CreateTimeSlotsTable extends Migration
     {
         Schema::create('time_slots', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('event_id')->onDelete('cascade')->constrained();
+            $table->string('name');
+            $table->boolean('shown');
             $table->timestamps();
         });
     }
