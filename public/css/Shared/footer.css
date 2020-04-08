@@ -2,6 +2,8 @@
   height: 150px;
   font-size: 20px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer p {

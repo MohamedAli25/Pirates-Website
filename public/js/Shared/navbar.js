@@ -102,12 +102,22 @@ var openSidebar = function openSidebar() {
   sidebar.style.width = "60%";
   sidebarIsOpen = true;
   darkLayer.style.display = 'block';
+  var elements = document.getElementsByClassName('sidebartext');
+  for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.add('tracking');
+      elements[i].classList.remove('trackingo');
+  }  
 };
 
 var closeSidebar = function closeSidebar() {
   sidebar.style.width = "0%";
   sidebarIsOpen = false;
   darkLayer.style.display = 'none';
+  var elements = document.getElementsByClassName('sidebartext');
+  for (var i = 0; i < elements.length; i++) {
+      elements[i].classList.remove('tracking');
+      elements[i].classList.add('trackingo');
+  }    
 };
 
 barsIcon.addEventListener('click', function () {
