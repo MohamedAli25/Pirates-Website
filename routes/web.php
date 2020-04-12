@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('{pageid}', function ($pageid) {
     return view($pageid);
-});
+
 
 
 

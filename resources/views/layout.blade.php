@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 
     {{-- External Libraries --}}
-    <script src="https://use.fontawesome.com/4e185a11e7.js"></script>
+    <script src="https://kit.fontawesome.com/1493d0f1e3.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
 
     {{-- Internal Libraries --}}
