@@ -3,6 +3,22 @@
 @section('title', 'Home Page')
 
 @section('content')
+<div class="container">
+<form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="row">
+
+        <div class="col-md-6">
+            <input type="file" name="image" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-success">Upload</button>
+        </div>
+
+    </div>
+</form>
+</div>
     <section class="section">
         <div class="container">
             <h1>A heading</h1>

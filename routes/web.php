@@ -3,9 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('User.contact');
+Route::get('{pageid}', function ($pageid) {
+    return view($pageid);
 });
+
+
+
+
+Route::get('image-upload', 'ImageController@show')->name('image.upload');
+Route::post('image-upload', 'ImageController@save')->name('image.upload.post');
 
 Auth::routes();
 

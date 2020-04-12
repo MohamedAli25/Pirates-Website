@@ -16,7 +16,8 @@ class CreateSpeakersTable extends Migration
         Schema::create('speakers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->
+            $table->string('description');
+            $table->string('photo');
             $table->timestamps();
         });
     }
