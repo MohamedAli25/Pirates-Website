@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Speaker extends Model
 {
     public function Seminar(){
-        return $this->belongsToMany('app/Seminar');
+        return $this->belongsToMany('\App\Seminar');
     }
 }
