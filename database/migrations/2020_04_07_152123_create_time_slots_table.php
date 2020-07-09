@@ -17,6 +17,7 @@ class CreateTimeSlotsTable extends Migration
             $table->id();
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->unsignedInteger('number_of_hrs');
             $table->boolean('shown');
             $table->timestamps();
         });

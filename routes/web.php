@@ -1,21 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// GeneralController Routes
+Route::get('/', '/home');
+Route::get('/home', 'GeneralController@home')->name('home');
+Route::get('/about', 'GeneralController@about')->name('about');
+Route::get('/contact', 'GeneralController@contact')->name('contact');
+Route::get('/sign-in', 'GeneralController@signIn')->name('signIn');
+Route::get('/sign-up', 'GeneralController@signUp')->name('signUp');
 
-// Route::get('{pageid}', function ($pageid) {
-//     return view($pageid);
-// }
-
-
-
-
-// Route::get('image-upload', 'ImageController@show')->name('image.upload');
-// Route::post('image-upload', 'ImageController@save')->name('image.upload.post');
-
-// Auth::routes();
-
-Route::get('/', function () {
-    return view('User.contact');
-});
-// Route::get('/home', 'HomeController@index')->name('home');
+// Auth Routes
+Auth::routes();

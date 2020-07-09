@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Speaker extends Model
 {
-    public function Seminar()
+    public function seminars()
     {
         return $this->belongsToMany(Seminar::class);
     }

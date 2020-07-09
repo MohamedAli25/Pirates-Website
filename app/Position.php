@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Position extends Model
 {
-    public function CrewMembers()
+    public function crewMembers()
     {
-        return $this->belongsToMany(CrewMember::class);
+        return $this->hasMany(CrewMember::class);
     }
 }

@@ -11,8 +11,8 @@ class TimeSlot extends Model
         return $this->belongsTo(Event::class);
     }
 
-    public function eventApplicant()
+    public function eventApplicants()
     {
-        return $this->belongsToMany(EventApplicant::class);
+        return $this->hasMany(EventApplicant::class);
     }
 }
