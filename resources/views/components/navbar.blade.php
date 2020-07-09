@@ -1,5 +1,5 @@
 <div>
-<nav class="navbar navbar-expand-md fixed-top">
+<nav class="navbar navbar-expand-md sticky-top">
     <h3 class="navbar-brand"><img id="logo" src="/images/pirates logo.png" alt=""></h3>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
