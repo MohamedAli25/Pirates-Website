@@ -3,10 +3,19 @@
 use Illuminate\Support\Facades\Route;
 
 
+// Route::get('{pageid}', function ($pageid) {
+//     return view($pageid);
+// }
+
+
+
+
+// Route::get('image-upload', 'ImageController@show')->name('image.upload');
+// Route::post('image-upload', 'ImageController@save')->name('image.upload.post');
+
+// Auth::routes();
+
 Route::get('/', function () {
-    return view('test');
+    return view('User.home_page');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

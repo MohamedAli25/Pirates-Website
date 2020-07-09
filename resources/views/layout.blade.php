@@ -12,7 +12,7 @@
 
     {{-- External Libraries --}}
     <script src="https://kit.fontawesome.com/1493d0f1e3.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
     {{-- Internal Libraries --}}
     <link rel="stylesheet" href="/css/Shared/bootstrap.css">
@@ -26,9 +26,6 @@
 <body>
     {{-- Navbar --}}
     <x-navbar/>
-
-    {{-- Margin for the navbar --}}
-    <div style="width: 100%;height: 80px"></div>
     {{-- Content --}}
     <div id="content">
         @yield('content')

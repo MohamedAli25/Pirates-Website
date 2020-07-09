@@ -1,0 +1,283 @@
+* {
+  color: black;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#showcase {
+  width: 100%;
+  height: 100vh;
+  background: url("/images/showcase.jpg") no-repeat center center/cover;
+}
+
+#showcase .showcase-content {
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+#showcase .showcase-content .showcase-title {
+  font-size: 8rem;
+  margin-bottom: 0.6rem;
+  color: #b59cd1;
+}
+
+#showcase .showcase-content .showcase-slogan {
+  font-size: 5rem;
+  font-weight: 300;
+  color: #f3f3f3;
+}
+
+#about {
+  background: url("/images/about-bg.jpg") no-repeat center center/cover fixed;
+}
+
+#about .light-overlay {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3.5rem;
+}
+
+#about .about-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+#about .about-description {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#about .about-content {
+  margin-top: 5rem;
+  align-items: stretch;
+}
+
+#about .about-content .about-part {
+  background: white;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+#about .about-content .about-part .about-part-photo {
+  height: 18rem;
+  position: relative;
+}
+
+#about .about-content .about-part .about-part-photo .icon {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  background: #744ba3;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: white solid 0.5rem;
+}
+
+#about .about-content .about-part .about-part-photo .icon > * {
+  font-size: 2.5rem;
+}
+
+#about .about-content .about-part .about-part-text {
+  padding: 2rem;
+}
+
+#about .about-content .about-part .about-part-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin: 2rem 0 1.2rem 0;
+}
+
+#about .about-content .about-part .about-part-text p {
+  font-size: 1.5rem;
+}
+
+#about .about-content .mission-part .about-part-photo {
+  background: url("/images/about-mission.jpg") no-repeat center center/cover;
+}
+
+#about .about-content .plan-part .about-part-photo {
+  background: url("/images/about-plan.jpg") no-repeat center center/cover;
+}
+
+#about .about-content .vision-part .about-part-photo {
+  background: url("/images/about-vision.jpg") no-repeat center center/cover;
+}
+
+#services {
+  background: white;
+  padding: 4rem;
+}
+
+#services .services-title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+#services .services-description {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#services .services-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.5rem;
+  margin: 5rem 0;
+}
+
+#services .services-content .service {
+  display: flex;
+  align-items: flex-start;
+}
+
+#services .services-content .service i {
+  font-size: 2.5rem;
+  color: #744ba3;
+  margin-right: 2rem;
+}
+
+#services .services-content .service .service-text .service-title {
+  font-size: 1.8rem;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+#services .services-content .service .service-text .service-description {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+#call-to-action {
+  text-align: center;
+  background: url("/images/call-to-action-bg.jpg") no-repeat center center/cover fixed;
+}
+
+#call-to-action .purple-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(116, 75, 163, 0.7);
+  padding: 6rem;
+}
+
+#call-to-action .purple-overlay .title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+#call-to-action .purple-overlay .description {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+#call-to-action .purple-overlay button {
+  text-transform: uppercase;
+  background: transparent;
+  border: 0.2rem solid white;
+  font-size: 1.6rem;
+  border-radius: 2.5rem;
+  display: inline-block;
+  transition: all 500ms;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  padding: 0.8rem 2.8rem;
+  color: white;
+}
+
+#call-to-action .purple-overlay button:hover {
+  background: #744ba3;
+  border-color: #744ba3;
+}
+
+#facts {
+  padding: 6rem 0;
+  background: white;
+  text-align: center;
+}
+
+#facts .title {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 2rem;
+  color: white;
+  font-size: 3.2rem;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+#facts .description {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  color: #333;
+}
+
+#facts .content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3rem;
+}
+
+#facts .content .fact .fact-number {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 4.8rem;
+  color: #744ba3;
+}
+
+#facts .content .fact .fact-title {
+  padding: 0;
+  margin: 0 0 2rem 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  color: #111;
+}
+
+@media (max-width: 992px) {
+  #services .services-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #facts .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #services .services-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+

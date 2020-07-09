@@ -7,12 +7,22 @@ const openSidebar = () => {
     sidebar.style.width = "60%";
     sidebarIsOpen = true;
     darkLayer.style.display = 'block';
+    var elements = document.getElementsByClassName('sidebartext');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.add('tracking');
+        elements[i].classList.remove('trackingo');
+    }
 }
 
 const closeSidebar = () => {
     sidebar.style.width = "0%";
     sidebarIsOpen = false;
     darkLayer.style.display = 'none';
+    var elements = document.getElementsByClassName('sidebartext');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('tracking');
+        elements[i].classList.add('trackingo');
+    }    
 }
 
 barsIcon.addEventListener('click', () => {
@@ -26,31 +36,3 @@ barsIcon.addEventListener('click', () => {
 darkLayer.addEventListener('click', () => {
     closeSidebar();
 });
-
-
-
-// function opensidebar() {
-//     if (sidebarIsOpen) {
-//         var sidebar = document.getElementById('sidenavbar');
-//         var body = document.getElementById('content');
-//         sidebar.style.width = "60%";
-//         body.style.backgroundColor = "rgba(0,0,0,0.4)";
-
-//         var elements = document.getElementsByClassName('sidebartext');
-//         for (var i = 0; i < elements.length; i++) {
-//             elements[i].classList.add('tracking');
-//             elements[i].classList.remove('trackingo');
-//         }
-
-//     } else {
-//         var sidebar = document.getElementById('sidenavbar');
-//         var body = document.getElementById('content');
-//         sidebar.style.width = "0%";
-//         body.style.backgroundColor = "rgba(0,0,0,0)";
-//         var elements = document.getElementsByClassName('sidebartext');
-//         for (var i = 0; i < elements.length; i++) {
-//             elements[i].classList.remove('tracking');
-//             elements[i].classList.add('trackingo');
-//         }
-//     }
-// }
