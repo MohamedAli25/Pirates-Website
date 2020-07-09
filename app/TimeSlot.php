@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class TimeSlot extends Model
 {
-    public function Event(){
-        return $this->belongsTo('\App\Event');
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
     }
 
-    public function EventApplicant(){
-        return $this->belongsToMany('\App\EventApplicant');
+    public function eventApplicant()
+    {
+        return $this->belongsToMany(EventApplicant::class);
     }
 }

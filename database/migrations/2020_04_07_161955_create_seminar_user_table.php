@@ -15,6 +15,8 @@ class CreateSeminarUserTable extends Migration
     {
         Schema::create('seminar_user', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('seminar_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateSeminarSpeakerTable extends Migration
     {
         Schema::create('seminar_speaker', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('seminar_id')->constrained();
+            $table->foreignId('speaker_id')->constrained();
             $table->timestamps();
         });
     }

@@ -15,6 +15,10 @@ class CreatePreferencesTable extends Migration
     {
         Schema::create('preferences', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->foreignId('event_id')->constrained()->onDelete('cascade');
+            $table->boolean('shown');
             $table->timestamps();
         });
     }
