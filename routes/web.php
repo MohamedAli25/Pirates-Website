@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+// Testing
+Route::get('/', function () {
+    return view('user.sign_up');
+});
+
 // AdminController
 Route::get('/admin/admin-panel', 'AdminController@showAdminPanel');
 
@@ -23,7 +28,7 @@ Route::get('/event/{id}/show-detailed', 'EventController@showDetailed');
 Route::resource('/event-applicant', 'EventApplicantController');
 
 // GeneralController
-Route::redirect('/', '/home');
+// Route::redirect('/', '/home');
 Route::get('/home', 'GeneralController@home')->name('home');
 Route::get('/about', 'GeneralController@about')->name('about');
 Route::get('/contact', 'GeneralController@contact')->name('contact');

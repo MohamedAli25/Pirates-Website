@@ -34,7 +34,7 @@ class CommitteeController extends Controller
      */
     public function create()
     {
-        //
+        return view('committee.create');
     }
 
     /**
@@ -78,7 +78,7 @@ class CommitteeController extends Controller
      */
     public function edit(Committee $committee)
     {
-        //
+        return view('committee.edit');
     }
 
     /**

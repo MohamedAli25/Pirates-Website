@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class=@yield('html-class')>
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Pirates Egypt IT Committee">
@@ -22,11 +22,11 @@
     {{-- Icon --}}
     <link rel="icon" href="/images/pirates logo.png">
 </head>
-<body>
+<body class=@yield('body-class')>
     {{-- Navbar --}}
     <x-navbar/>
     {{-- Content --}}
-    <div id="content">
+    <div class="content-wrapper">
         @yield('content')
     </div>
     {{-- Footer --}}
