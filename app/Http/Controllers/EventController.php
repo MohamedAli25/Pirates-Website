@@ -18,6 +18,16 @@ class EventController extends Controller
     }
 
     /**
+     * Display a listing of the resource in detail.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexDetailed()
+    {
+        //
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -45,6 +55,17 @@ class EventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Event $event)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Event  $event
+     * @return \Illuminate\Http\Response
+     */
+    public function showDetailed(Event $event)
     {
         //
     }

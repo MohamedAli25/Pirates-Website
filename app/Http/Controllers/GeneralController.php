@@ -21,13 +21,13 @@ class GeneralController extends Controller
         return view('User.contact');
     }
 
-    public function signIn()
-    {
-        return view('User.sign_in');
-    }
+    // public function signIn()
+    // {
+    //     return view('User.sign_in');
+    // }
 
-    public function signUp()
-    {
-        return view('User.sign_up');
-    }
+    // public function signUp()
+    // {
+    //     return view('User.sign_up');
+    // }
 }

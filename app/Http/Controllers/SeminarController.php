@@ -18,6 +18,16 @@ class SeminarController extends Controller
     }
 
     /**
+     * Display a listing of the resource in detail.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexDetailed()
+    {
+        //
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -45,6 +55,17 @@ class SeminarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Seminar $seminar)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource in detail.
+     *
+     * @param  \App\Seminar  $seminar
+     * @return \Illuminate\Http\Response
+     */
+    public function showDetailed(Seminar $seminar)
     {
         //
     }

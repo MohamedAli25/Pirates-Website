@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Committee;
+use App\User;
 use Illuminate\Http\Request;
 
-class CommitteeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,16 +13,6 @@ class CommitteeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Display a listing of the resource in detail.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function indexDetailed()
     {
         //
     }
@@ -51,10 +41,10 @@ class CommitteeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Committee  $committee
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Committee $committee)
+    public function show(User $user)
     {
         //
     }
@@ -62,10 +52,10 @@ class CommitteeController extends Controller
     /**
      * Display the specified resource in detail.
      *
-     * @param  \App\Committee  $committee
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function showDetailed(Committee $committee)
+    public function showDetailed(User $user)
     {
         //
     }
@@ -73,10 +63,10 @@ class CommitteeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Committee  $committee
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Committee $committee)
+    public function edit(User $user)
     {
         //
     }
@@ -85,10 +75,10 @@ class CommitteeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Committee  $committee
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Committee $committee)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -96,10 +86,10 @@ class CommitteeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Committee  $committee
+     * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Committee $committee)
+    public function destroy(User $user)
     {
         //
     }

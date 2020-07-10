@@ -8,16 +8,16 @@ Route::get('/admin/admin-panel', 'AdminController@showAdminPanel');
 
 // CommitteeController
 Route::resource('/committee', 'CommitteeController');
-Route::get('/committee/show-detailed', 'CommitteeController@showAllDetailed');
-Route::get('/committee/{id}/show-detailed', 'CommitteeController@showOneDetailed');
+Route::get('/committee/show-detailed', 'CommitteeController@indexDetailed');
+Route::get('/committee/{id}/show-detailed', 'CommitteeController@showDetailed');
 
 // CrewMember
 Route::resource('/crew-member', 'CrewMemberController');
 
 // EventController
 Route::resource('/event', 'EventController');
-Route::get('/event/show-detailed', 'EventController@showAllDetailed');
-Route::get('/event/{id}/show-detailed', 'EventController@showOneDetailed');
+Route::get('/event/show-detailed', 'EventController@indexDetailed');
+Route::get('/event/{id}/show-detailed', 'EventController@showDetailed');
 
 // EventApplicant
 Route::resource('/event-applicant', 'EventApplicantController');
@@ -27,8 +27,8 @@ Route::redirect('/', '/home');
 Route::get('/home', 'GeneralController@home')->name('home');
 Route::get('/about', 'GeneralController@about')->name('about');
 Route::get('/contact', 'GeneralController@contact')->name('contact');
-Route::get('/sign-in', 'GeneralController@signIn')->name('signIn');
-Route::get('/sign-up', 'GeneralController@signUp')->name('signUp');
+// Route::get('/sign-in', 'GeneralController@signIn')->name('signIn');
+// Route::get('/sign-up', 'GeneralController@signUp')->name('signUp');
 
 // PositionController
 Route::resource('/position', 'PositionController');
@@ -38,8 +38,8 @@ Route::resource('/preference', 'PreferenceController');
 
 // SeminarController
 Route::resource('/seminar', 'SeminarController');
-Route::get('/seminar/detailed', 'SeminarController@showAllDetailed');
-Route::get('/seminar/{id}/detailed', 'SeminarController@showOneDetailed');
+Route::get('/seminar/detailed', 'SeminarController@indexDetailed');
+Route::get('/seminar/{id}/detailed', 'SeminarController@showDetailed');
 
 // SpeakerController
 Route::resource('/speaker', 'SpeakerController');
@@ -48,12 +48,8 @@ Route::resource('/speaker', 'SpeakerController');
 Route::resource('/time-slot', 'TimeSlotController');
 
 // UserController
-Route::get('/user/create', 'UserController@create');
-Route::post('/user', 'UserController@store');
-Route::get('/user/{id}/edit', 'UserController@edit');
-Route::get('/user', 'UserController@index');
-Route::get('/user/{id}', 'UserController@show');
-Route::get('/user/{id}/show-detailed', 'UserController@showDetailed');
+Route::resource('/user', 'UserController');
+Route::get('/user/{id}/show-detailed', 'UserController@showOneDetailed');
 
 // Auth Routes
 Auth::routes();
