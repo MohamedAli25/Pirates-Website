@@ -15,9 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Rubik:wght@300;400;700&display=swap" rel="stylesheet">
 
     {{-- Internal Libraries --}}
-    <link rel="stylesheet" href="/css/Shared/bootstrap.css">
-    <link rel="stylesheet" href="/css/Shared/shared.css">
-    <link rel="stylesheet" href="/css/Shared/navbar.css">
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/components/navbar.css">
     @yield('css')
 
     {{-- Icon --}}
@@ -34,10 +33,9 @@
     {{-- <x-footer/> --}}
     {{-- External Libraries --}}
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     {{-- Internal Libraries --}}
-    <script src="{{ asset('js/Shared/navbar.js') }}"></script>
+    <script src="/js/Shared/navbar.js"></script>
     @yield('js')
 </body>
 </html>
