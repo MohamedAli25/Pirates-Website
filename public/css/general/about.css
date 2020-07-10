@@ -1,0 +1,52 @@
+#about * {
+  color: #454545;
+}
+
+#about .dotted-hr {
+  width: 10rem;
+  height: 0;
+  border: none;
+  border-top: #744ba3 dotted 0.2rem;
+  margin-bottom: 5rem;
+}
+
+#about h1,
+#about h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+#about .header {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  font-size: 5rem;
+  font-weight: 200;
+}
+
+#about .header span {
+  font-weight: bold;
+  color: #744ba3;
+}
+
+#about .content .content-photo {
+  margin-bottom: 3rem;
+}
+
+#about .content .about-part-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#about .content .about-part-description {
+  color: #999999;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 430px) {
+  #about .header {
+    font-size: 4rem;
+  }
+}
+

@@ -1,0 +1,32 @@
+.footer {
+  height: 150px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.footer p {
+  color: white;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+  font-size: 22px;
+}
+
+.footer-row {
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.footer-row a {
+  padding: 10px;
+  color: white;
+  z-index: 0;
+}
+
+.footer-row h3 {
+  padding: 10px;
+  color: white;
+  z-index: 0;
+  display: block;
+}
+

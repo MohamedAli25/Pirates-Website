@@ -1,24 +1,131 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
-mix.sass('resources/sass/Shared/footer.scss', 'public/css/Shared')
-    .sass('resources/sass/Shared/navbar.scss', 'public/css/Shared')
-    .sass('resources/sass/Shared/shared.scss', 'public/css/Shared')
-    .sass('resources/sass/User/about.scss', 'public/css/User')
-    .sass('resources/sass/User/committees.scss', 'public/css/User')
-    .sass('resources/sass/User/contact.scss', 'public/css/User')
-    .sass('resources/sass/User/events.scss', 'public/css/User')
-    .sass('resources/sass/User/home_page.scss', 'public/css/User')
-    .sass('resources/sass/User/profile.scss', 'public/css/User')
-    .sass('resources/sass/User/sign.scss', 'public/css/User')
-    .js('resources/js/Shared/navbar.js', 'public/js/Shared');
+mix.sass("resources/sass/admin/admin_panel.scss", "public/css/admin")
+    .sass("resources/sass/bootstrap/bootstrap.scss", "public/css/bootstrap")
+    .sass("resources/sass/committee/create.scss", "public/css/committee")
+    .sass("resources/sass/committee/edit.scss", "public/css/committee")
+    .sass("resources/sass/committee/show_all.scss", "public/css/committee")
+    .sass(
+        "resources/sass/committee/show_all_detailed.scss",
+        "public/css/committee"
+    )
+    .sass("resources/sass/committee/show_one.scss", "public/css/committee")
+    .sass(
+        "resources/sass/committee/show_one_detailed.scss",
+        "public/css/committee"
+    )
+    .sass("resources/sass/components/footer.scss", "public/css/components")
+    .sass("resources/sass/components/navbar.scss", "public/css/components")
+    .sass("resources/sass/crew_member/create.scss", "public/css/crew_member")
+    .sass("resources/sass/crew_member/edit.scss", "public/css/crew_member")
+    .sass("resources/sass/crew_member/show_all.scss", "public/css/crew_member")
+    .sass("resources/sass/crew_member/show_one.scss", "public/css/crew_member")
+    .sass("resources/sass/event/create.scss", "public/css/event")
+    .sass("resources/sass/event/edit.scss", "public/css/event")
+    .sass("resources/sass/event/show_all.scss", "public/css/event")
+    .sass("resources/sass/event/show_all_detailed.scss", "public/css/event")
+    .sass("resources/sass/event/show_one.scss", "public/css/event")
+    .sass("resources/sass/event/show_one_detailed.scss", "public/css/event")
+    .sass(
+        "resources/sass/event_applicant/create.scss",
+        "public/css/event_applicant"
+    )
+    .sass(
+        "resources/sass/event_applicant/edit.scss",
+        "public/css/event_applicant"
+    )
+    .sass(
+        "resources/sass/event_applicant/show_all.scss",
+        "public/css/event_applicant"
+    )
+    .sass(
+        "resources/sass/event_applicant/show_one.scss",
+        "public/css/event_applicant"
+    )
+    .sass("resources/sass/position/create.scss", "public/css/position")
+    .sass("resources/sass/position/edit.scss", "public/css/position")
+    .sass("resources/sass/position/show_all.scss", "public/css/position")
+    .sass("resources/sass/position/show_one.scss", "public/css/position")
+    .sass("resources/sass/general/about.scss", "public/css/general")
+    .sass("resources/sass/general/contact.scss", "public/css/general")
+    .sass("resources/sass/general/home_page.scss", "public/css/general")
+    .sass("resources/sass/preference/create.scss", "public/css/preference")
+    .sass("resources/sass/preference/edit.scss", "public/css/preference")
+    .sass("resources/sass/preference/show_all.scss", "public/css/preference")
+    .sass("resources/sass/preference/show_one.scss", "public/css/preference")
+    .sass("resources/sass/seminar/create.scss", "public/css/seminar")
+    .sass("resources/sass/seminar/edit.scss", "public/css/seminar")
+    .sass("resources/sass/seminar/show_all.scss", "public/css/seminar")
+    .sass("resources/sass/seminar/show_all_detailed.scss", "public/css/seminar")
+    .sass("resources/sass/seminar/show_one.scss", "public/css/seminar")
+    .sass("resources/sass/seminar/show_one_detailed.scss", "public/css/seminar")
+    .sass("resources/sass/speaker/create.scss", "public/css/speaker")
+    .sass("resources/sass/speaker/edit.scss", "public/css/speaker")
+    .sass("resources/sass/speaker/show_all.scss", "public/css/speaker")
+    .sass("resources/sass/speaker/show_one.scss", "public/css/speaker")
+    .sass("resources/sass/time_slot/create.scss", "public/css/time_slot")
+    .sass("resources/sass/time_slot/edit.scss", "public/css/time_slot")
+    .sass("resources/sass/time_slot/show_all.scss", "public/css/time_slot")
+    .sass("resources/sass/time_slot/show_one.scss", "public/css/time_slot")
+    .sass("resources/sass/user/create.scss", "public/css/user")
+    .sass("resources/sass/user/edit.scss", "public/css/user")
+    .sass("resources/sass/user/show_all.scss", "public/css/user")
+    .sass("resources/sass/user/show_all_detailed.scss", "public/css/user")
+    .sass("resources/sass/user/show_one.scss", "public/css/user")
+    .sass("resources/sass/user/show_one_detailed.scss", "public/css/user")
+    .sass("resources/sass/user/sign.scss", "public/css/user")
+    .js("resources/js/admin/admin_panel.js", "public/js/admin")
+    .js("resources/js/committee/create.js", "public/js/committee")
+    .js("resources/js/committee/edit.js", "public/js/committee")
+    .js("resources/js/committee/show_all.js", "public/js/committee")
+    .js("resources/js/committee/show_all_detailed.js", "public/js/committee")
+    .js("resources/js/committee/show_one.js", "public/js/committee")
+    .js("resources/js/committee/show_one_detailed.js", "public/js/committee")
+    .js("resources/js/components/footer.js", "public/js/components")
+    .js("resources/js/components/navbar.js", "public/js/components")
+    .js("resources/js/crew_member/create.js", "public/js/crew_member")
+    .js("resources/js/crew_member/edit.js", "public/js/crew_member")
+    .js("resources/js/crew_member/show_all.js", "public/js/crew_member")
+    .js("resources/js/crew_member/show_one.js", "public/js/crew_member")
+    .js("resources/js/event/create.js", "public/js/event")
+    .js("resources/js/event/edit.js", "public/js/event")
+    .js("resources/js/event/show_all.js", "public/js/event")
+    .js("resources/js/event/show_all_detailed.js", "public/js/event")
+    .js("resources/js/event/show_one.js", "public/js/event")
+    .js("resources/js/event/show_one_detailed.js", "public/js/event")
+    .js("resources/js/event_applicant/create.js", "public/js/event_applicant")
+    .js("resources/js/event_applicant/edit.js", "public/js/event_applicant")
+    .js("resources/js/event_applicant/show_all.js", "public/js/event_applicant")
+    .js("resources/js/event_applicant/show_one.js", "public/js/event_applicant")
+    .js("resources/js/general/about.js", "public/js/general")
+    .js("resources/js/general/contact.js", "public/js/general")
+    .js("resources/js/general/home_page.js", "public/js/general")
+    .js("resources/js/position/create.js", "public/js/position")
+    .js("resources/js/position/edit.js", "public/js/position")
+    .js("resources/js/position/show_all.js", "public/js/position")
+    .js("resources/js/position/show_one.js", "public/js/position")
+    .js("resources/js/preference/create.js", "public/js/preference")
+    .js("resources/js/preference/edit.js", "public/js/preference")
+    .js("resources/js/preference/show_all.js", "public/js/preference")
+    .js("resources/js/preference/show_one.js", "public/js/preference")
+    .js("resources/js/seminar/create.js", "public/js/seminar")
+    .js("resources/js/seminar/edit.js", "public/js/seminar")
+    .js("resources/js/seminar/show_all.js", "public/js/seminar")
+    .js("resources/js/seminar/show_all_detailed.js", "public/js/seminar")
+    .js("resources/js/seminar/show_one.js", "public/js/seminar")
+    .js("resources/js/seminar/show_one_detailed.js", "public/js/seminar")
+    .js("resources/js/speaker/create.js", "public/js/speaker")
+    .js("resources/js/speaker/edit.js", "public/js/speaker")
+    .js("resources/js/speaker/show_all.js", "public/js/speaker")
+    .js("resources/js/speaker/show_one.js", "public/js/speaker")
+    .js("resources/js/time_slot/create.js", "public/js/time_slot")
+    .js("resources/js/time_slot/edit.js", "public/js/time_slot")
+    .js("resources/js/time_slot/show_all.js", "public/js/time_slot")
+    .js("resources/js/time_slot/show_one.js", "public/js/time_slot")
+    .js("resources/js/user/create.js", "public/js/user")
+    .js("resources/js/user/edit.js", "public/js/user")
+    .js("resources/js/user/show_all.js", "public/js/user")
+    .js("resources/js/user/show_all_detailed.js", "public/js/user")
+    .js("resources/js/user/show_one.js", "public/js/user")
+    .js("resources/js/user/show_one_detailed.js", "public/js/user")
+    .js("resources/js/user/sign.js", "public/js/user");
