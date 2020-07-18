@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    public function TimeSlot(){
+    public function TimeSlot()
+    {
         return $this->hasMany('\App\TimeSlot');
     }
 }

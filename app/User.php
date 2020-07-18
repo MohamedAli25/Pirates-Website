@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'university', 'faculty', 'department', 'academic_year'
     ];
 
     /**
@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function eventApplicants()
+    {
+        return $this->hasMany(EventApplicant::class);
+    }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'event_applicants');
+    }
 }
