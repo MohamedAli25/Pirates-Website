@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seminar extends Model
 {
-    public function Speaker(){
-        return $this->hasMany('\App\Speaker');
+    protected $fillable = ['name', 'description'];
+
+    public function speakers()
+    {
+        return $this->belongsToMany(Speaker::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }

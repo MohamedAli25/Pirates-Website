@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Preference extends Model
 {
+    protected $fillable = ['name', 'description', 'event_id', 'shown'];
+
     public function event()
     {
         return $this->belongsTo(Event::class);

@@ -15,6 +15,11 @@ class CreateEventApplicantsTable extends Migration
     {
         Schema::create('event_applicants', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('event_id')->constrained()->onDelete('cascade');
+            $table->foreignId('time_slot_id')->constrained()->onDelete('cascade');
+            $table->foreign('first_preference_id')->references('id')->on('preferences')->onDelete('cascade');
+            $table->foreign('second_preference_id')->references('id')->on('preferences')->onDelete('cascade');
             $table->timestamps();
         });
     }
