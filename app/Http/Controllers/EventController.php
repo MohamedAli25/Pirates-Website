@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -14,7 +15,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        return view('event.show_all', [
+            'events' => Event::all()
+        ]);
     }
 
     /**
@@ -24,7 +27,9 @@ class EventController extends Controller
      */
     public function indexDetailed()
     {
-        //
+        return view('event.show_all_detailed', [
+            'events' => Event::all()
+        ]);
     }
 
     /**
@@ -34,7 +39,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('event.create');
     }
 
     /**
@@ -45,7 +50,17 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'photo' => 'required'
+        ]);
+        $validatedData['shown'] = $request->has('shown');
+        $validatedData['available'] = $request->has('available');
+        $photoPath = Storage::putFile('public/event', $request->file('photo'));
+        $validatedData['photo'] = str_replace('public', 'storage', $photoPath);
+        Event::create($validatedData);
+        return redirect("/event/show-detailed");
     }
 
     /**
@@ -56,7 +71,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        return view('event.show_one', compact('event'));
     }
 
     /**
@@ -67,7 +82,7 @@ class EventController extends Controller
      */
     public function showDetailed(Event $event)
     {
-        //
+        return view('event.show_one_detailed', compact('event'));
     }
 
     /**
@@ -78,7 +93,7 @@ class EventController extends Controller
      */
     public function edit(Event $event)
     {
-        //
+        return view('event.edit', compact('event'));
     }
 
     /**
@@ -90,7 +105,20 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        $validatedData['shown'] = $request->has('shown');
+        $validatedData['available'] = $request->has('available');
+        if ($request->file('photo')) {
+            $photoPathOld = str_replace('storage', 'public', $event->photo);
+            Storage::delete($photoPathOld);
+            $photoPathNew = Storage::putFile('public/event', $request->file('photo'));
+            $validatedData['photo'] = str_replace('public', 'storage', $photoPathNew);
+        }
+        $event->update($validatedData);
+        return redirect("/event/show-detailed");
     }
 
     /**
@@ -101,6 +129,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $photoPath = str_replace('storage', 'public', $event->photo);
+        Storage::delete($photoPath);
+        $event->delete();
+        return redirect("/event/show-detailed");
     }
 }

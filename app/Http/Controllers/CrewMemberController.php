@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Committee;
 use App\CrewMember;
+use App\Position;
+use App\Rules\UserEmailExists;
+use App\User;
 use Illuminate\Http\Request;
 
 class CrewMemberController extends Controller
@@ -14,7 +18,9 @@ class CrewMemberController extends Controller
      */
     public function index()
     {
-        //
+        return view('crew_member.show_all', [
+            'crewMembers' => CrewMember::all()
+        ]);
     }
 
     /**
@@ -24,7 +30,10 @@ class CrewMemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('crew_member.create', [
+            'committees' => Committee::all(),
+            'positions' => Position::all()
+        ]);
     }
 
     /**
@@ -35,7 +44,17 @@ class CrewMemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => ['required', 'email', new UserEmailExists],
+            'committee_id' => 'required|numeric',
+            'position_id' => 'required|numeric',
+        ]);
+        $user = User::where('email', request('email'))->first();
+        $validatedData['email_id'] = $user->id;
+        $validatedData['committee_id'] = request('committee_id');
+        $validatedData['position_id'] = request('position_id');
+        CrewMember::create($validatedData);
+        return redirect("/crew-member");
     }
 
     /**
@@ -46,7 +65,7 @@ class CrewMemberController extends Controller
      */
     public function show(CrewMember $crewMember)
     {
-        //
+        return view('crew_member.show_one', compact('crewMember'));
     }
 
     /**
@@ -57,7 +76,11 @@ class CrewMemberController extends Controller
      */
     public function edit(CrewMember $crewMember)
     {
-        //
+        return view('crew_member.edit', [
+            'crewMember' => $crewMember,
+            'committees' => Committee::all(),
+            'positions' => Position::all()
+        ]);
     }
 
     /**
@@ -69,7 +92,12 @@ class CrewMemberController extends Controller
      */
     public function update(Request $request, CrewMember $crewMember)
     {
-        //
+        $validatedData = $request->validate([
+            'committee_id' => 'required|numeric',
+            'position_id' => 'required|numeric'
+        ]);
+        $crewMember->update($validatedData);
+        return redirect("/crew-member/" . $crewMember->id);
     }
 
     /**
@@ -80,6 +108,7 @@ class CrewMemberController extends Controller
      */
     public function destroy(CrewMember $crewMember)
     {
-        //
+        $crewMember->delete();
+        return redirect("/crew-member");
     }
 }

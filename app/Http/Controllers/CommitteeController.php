@@ -14,7 +14,9 @@ class CommitteeController extends Controller
      */
     public function index()
     {
-        //
+        return view('committee.show_all', [
+            'committees' => Committee::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,9 @@ class CommitteeController extends Controller
      */
     public function indexDetailed()
     {
-        //
+        return view('committee.show_all_detailed', [
+            'committees' => Committee::all()
+        ]);
     }
 
     /**
@@ -45,7 +49,11 @@ class CommitteeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required'
+        ]);
+        Committee::create($validatedData);
+        return redirect("/committee/show-detailed");
     }
 
     /**
@@ -56,7 +64,7 @@ class CommitteeController extends Controller
      */
     public function show(Committee $committee)
     {
-        //
+        return view('committee.show_one', compact('committee'));
     }
 
     /**
@@ -67,7 +75,7 @@ class CommitteeController extends Controller
      */
     public function showDetailed(Committee $committee)
     {
-        //
+        return view('committee.show_one_detailed', compact('committee'));
     }
 
     /**
@@ -78,7 +86,7 @@ class CommitteeController extends Controller
      */
     public function edit(Committee $committee)
     {
-        return view('committee.edit');
+        return view('committee.edit', compact('committee'));
     }
 
     /**
@@ -90,7 +98,11 @@ class CommitteeController extends Controller
      */
     public function update(Request $request, Committee $committee)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+        $committee->update($validatedData);
+        return redirect("/committee/" . $committee->id . "/show-detailed");
     }
 
     /**
@@ -101,6 +113,7 @@ class CommitteeController extends Controller
      */
     public function destroy(Committee $committee)
     {
-        //
+        $committee->delete();
+        return redirect("/committee/show-detailed");
     }
 }

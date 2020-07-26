@@ -1,0 +1,1 @@
+<img src="{{ asset('storage/event/YwuLbydncsYYssGifUUZL2VgqtIIARSLxo9JEknv.jpeg') }}" alt="">

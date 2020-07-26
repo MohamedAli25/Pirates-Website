@@ -8,17 +8,17 @@ class GeneralController extends Controller
 {
     public function home()
     {
-        return view('User.home_page');
+        return view('general.home_page');
     }
 
     public function about()
     {
-        return view('User.about');
+        return view('general.about');
     }
 
     public function contact()
     {
-        return view('User.contact');
+        return view('general.contact');
     }
 
     // public function signIn()

@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function showAdminPanel()
     {
-        //
+        return view('admin_panel');
     }
 }

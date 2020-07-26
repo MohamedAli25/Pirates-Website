@@ -14,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.show_all', [
+            'users' => User::all()
+        ]);
     }
 
     /**
@@ -24,19 +26,21 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
+    /*
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
+     
     public function store(Request $request)
     {
         //
     }
+    */
 
     /**
      * Display the specified resource.
@@ -46,7 +50,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('user.show_one', compact('user'));
     }
 
     /**
@@ -57,7 +61,7 @@ class UserController extends Controller
      */
     public function showDetailed(User $user)
     {
-        //
+        return view('user.show_one_detailed', compact('user'));
     }
 
     /**
@@ -68,7 +72,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -80,7 +84,16 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'university' => 'required',
+            'faculty' => 'required',
+            'department' => '',
+            'academic_year' => 'required',
+        ]);
+        $user->update($validatedData);
+        return redirect("/user/" . $user->id);
     }
 
     /**
@@ -91,6 +104,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect("/");
     }
 }

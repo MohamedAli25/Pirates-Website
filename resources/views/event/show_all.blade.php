@@ -30,7 +30,7 @@
     </div> --}}
 <p class="p2">1-Technates</p>
     <div class="row">
-        <div class="col-sm-6" class="div1"><br><img src="/images/parallax1.jpg" class="img1"></div>
+    <div class="col-sm-6" class="div1"><br><img src="{{ asset('storage/event/htzwUBwBOvOlatma0w3gPmWNIhV5gVqch4fzlsnD.jpeg') }}" class="img1"></div>
          <p class="col-sm-6" id="p3"> 1- Technates (Technical event) :
           <br>In this event, we provide engineering students with technical
           workshops in all departments (Mechanical- Electrical – Civil –

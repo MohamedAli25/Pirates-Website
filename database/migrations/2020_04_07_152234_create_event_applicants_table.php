@@ -18,8 +18,8 @@ class CreateEventApplicantsTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('event_id')->constrained()->onDelete('cascade');
             $table->foreignId('time_slot_id')->constrained()->onDelete('cascade');
-            $table->foreign('first_preference_id')->references('id')->on('preferences')->onDelete('cascade');
-            $table->foreign('second_preference_id')->references('id')->on('preferences')->onDelete('cascade');
+            $table->foreignId('first_preference_id')->references('id')->on('preferences')->onDelete('cascade');
+            $table->foreignId('second_preference_id')->references('id')->on('preferences')->onDelete('cascade');
             $table->timestamps();
         });
     }

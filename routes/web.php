@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Testing
 Route::get('/', function () {
-    return view('user.sign_up');
+    return view('try');
 });
 
 // AdminController
@@ -13,16 +13,16 @@ Route::get('/admin/admin-panel', 'AdminController@showAdminPanel');
 
 // CommitteeController
 Route::resource('/committee', 'CommitteeController');
-Route::get('/committee/show-detailed', 'CommitteeController@indexDetailed');
-Route::get('/committee/{id}/show-detailed', 'CommitteeController@showDetailed');
+Route::get('/committee/show-detailed', 'CommitteeController@indexDetailed')->name('committee.indexDetailed');
+Route::get('/committee/{id}/show-detailed', 'CommitteeController@showDetailed')->name('committee.showDetailed');
 
 // CrewMember
 Route::resource('/crew-member', 'CrewMemberController');
 
 // EventController
 Route::resource('/event', 'EventController');
-Route::get('/event/show-detailed', 'EventController@indexDetailed');
-Route::get('/event/{id}/show-detailed', 'EventController@showDetailed');
+Route::get('/event/show-detailed', 'EventController@indexDetailed')->name('event.indexDetailed');
+Route::get('/event/{id}/show-detailed', 'EventController@showDetailed')->name('event.showDetailed');
 
 // EventApplicant
 Route::resource('/event-applicant', 'EventApplicantController');
@@ -43,8 +43,8 @@ Route::resource('/preference', 'PreferenceController');
 
 // SeminarController
 Route::resource('/seminar', 'SeminarController');
-Route::get('/seminar/detailed', 'SeminarController@indexDetailed');
-Route::get('/seminar/{id}/detailed', 'SeminarController@showDetailed');
+Route::get('/seminar/detailed', 'SeminarController@indexDetailed')->name('seminar.indexDetailed');
+Route::get('/seminar/{id}/detailed', 'SeminarController@showDetailed')->name('seminar.indexDetailed');
 
 // SpeakerController
 Route::resource('/speaker', 'SpeakerController');
@@ -54,7 +54,7 @@ Route::resource('/time-slot', 'TimeSlotController');
 
 // UserController
 Route::resource('/user', 'UserController');
-Route::get('/user/{id}/show-detailed', 'UserController@showOneDetailed');
+Route::get('/user/{id}/show-detailed', 'UserController@showOneDetailed')->name('user.indexDetailed');
 
 // Auth Routes
 Auth::routes();

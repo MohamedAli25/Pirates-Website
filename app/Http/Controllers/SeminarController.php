@@ -14,7 +14,9 @@ class SeminarController extends Controller
      */
     public function index()
     {
-        //
+        return view('seminar.show_all', [
+            'seminars' => Seminar::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,9 @@ class SeminarController extends Controller
      */
     public function indexDetailed()
     {
-        //
+        return view('seminar.show_all_detailed', [
+            'seminars' => Seminar::all()
+        ]);
     }
 
     /**
@@ -34,7 +38,7 @@ class SeminarController extends Controller
      */
     public function create()
     {
-        //
+        return view('seminar.create');
     }
 
     /**
@@ -45,7 +49,12 @@ class SeminarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        Seminar::create($validatedData);
+        return redirect("/seminar/show-detailed");
     }
 
     /**
@@ -56,7 +65,7 @@ class SeminarController extends Controller
      */
     public function show(Seminar $seminar)
     {
-        //
+        return view('seminar.show_one', compact('seminar'));
     }
 
     /**
@@ -67,7 +76,7 @@ class SeminarController extends Controller
      */
     public function showDetailed(Seminar $seminar)
     {
-        //
+        return view('seminar.show_one_detailed', compact('seminar'));
     }
 
     /**
@@ -78,7 +87,7 @@ class SeminarController extends Controller
      */
     public function edit(Seminar $seminar)
     {
-        //
+        return view('seminar.edit', compact('seminar'));
     }
 
     /**
@@ -90,7 +99,12 @@ class SeminarController extends Controller
      */
     public function update(Request $request, Seminar $seminar)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        $seminar->update($validatedData);
+        return redirect("/seminar/show-detailed");
     }
 
     /**
@@ -101,6 +115,7 @@ class SeminarController extends Controller
      */
     public function destroy(Seminar $seminar)
     {
-        //
+        $seminar->delete();
+        return redirect("/seminar/show-detailed");
     }
 }
