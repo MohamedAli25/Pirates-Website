@@ -18,7 +18,12 @@ class EventPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
+    }
+
+    public function viewAnyDetailed(User $user)
+    {
+        return false;
     }
 
     /**
@@ -30,7 +35,12 @@ class EventPolicy
      */
     public function view(User $user, Event $event)
     {
-        //
+        return true;
+    }
+
+    public function viewDetailed(User $user, Event $event)
+    {
+        return false;
     }
 
     /**
@@ -41,7 +51,7 @@ class EventPolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +63,7 @@ class EventPolicy
      */
     public function update(User $user, Event $event)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +75,7 @@ class EventPolicy
      */
     public function delete(User $user, Event $event)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +87,7 @@ class EventPolicy
      */
     public function restore(User $user, Event $event)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +99,6 @@ class EventPolicy
      */
     public function forceDelete(User $user, Event $event)
     {
-        //
+        return false;
     }
 }

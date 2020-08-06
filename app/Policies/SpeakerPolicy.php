@@ -18,7 +18,7 @@ class SpeakerPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -30,7 +30,7 @@ class SpeakerPolicy
      */
     public function view(User $user, Speaker $speaker)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class SpeakerPolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class SpeakerPolicy
      */
     public function update(User $user, Speaker $speaker)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class SpeakerPolicy
      */
     public function delete(User $user, Speaker $speaker)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +77,7 @@ class SpeakerPolicy
      */
     public function restore(User $user, Speaker $speaker)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class SpeakerPolicy
      */
     public function forceDelete(User $user, Speaker $speaker)
     {
-        //
+        return false;
     }
 }

@@ -18,7 +18,7 @@ class TimeSlotPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -30,7 +30,7 @@ class TimeSlotPolicy
      */
     public function view(User $user, TimeSlot $timeSlot)
     {
-        //
+        return false;
     }
 
     /**
@@ -41,7 +41,7 @@ class TimeSlotPolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class TimeSlotPolicy
      */
     public function update(User $user, TimeSlot $timeSlot)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class TimeSlotPolicy
      */
     public function delete(User $user, TimeSlot $timeSlot)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +77,7 @@ class TimeSlotPolicy
      */
     public function restore(User $user, TimeSlot $timeSlot)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class TimeSlotPolicy
      */
     public function forceDelete(User $user, TimeSlot $timeSlot)
     {
-        //
+        return false;
     }
 }

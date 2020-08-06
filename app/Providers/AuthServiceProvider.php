@@ -39,7 +39,16 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Committee' => 'App\Policies\CommitteePolicy',
+        'App\CrewMember' => 'App\Policies\CrewMemberPolicy',
+        'App\Event' => 'App\Policies\EventPolicy',
+        'App\EventApplicant' => 'App\Policies\EventApplicantPolicy',
+        'App\Position' => 'App\Policies\PositionPolicy',
+        'App\Preference' => 'App\Policies\PreferencePolicy',
+        'App\Seminar' => 'App\Policies\SeminarPolicy',
+        'App\Speaker' => 'App\Policies\SpeakerPolicy',
+        'App\TimeSlot' => 'App\Policies\TimeSlotPolicy',
+        'App\User' => 'App\Policies\UserPolicy',
     ];
 
     /**
@@ -51,6 +60,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::before(function ($user) {
+            if ($user->isSuperAdmin()) {
+                return true;
+            }
+        });
     }
 }

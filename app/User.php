@@ -65,6 +65,11 @@ class User extends Authenticatable
         return $this->id === AuthServiceProvider::adminId;
     }
 
+    public function isSuperAdmin()
+    {
+        return $this->isAdmin() || $this->isOMDirector() || $this->isExecutiveDirector() || $this->isVicePresident() || $this->isPresident();
+    }
+
     // Position Check
     public function isMember()
     {
@@ -136,6 +141,11 @@ class User extends Authenticatable
         } else {
             return false;
         }
+    }
+
+    public function isBoard()
+    {
+        return $this->isViceHead() || $this->isHead() || $this->isInTM();
     }
 
     // Committee Check

@@ -17,7 +17,7 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -27,9 +27,9 @@ class UserPolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function view(User $user)
+    public function view(User $user, User $model)
     {
-        //
+        return $user->is($model);
     }
 
     /**
@@ -40,7 +40,7 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -50,9 +50,9 @@ class UserPolicy
      * @param  \App\User  $model
      * @return mixed
      */
-    public function update(User $user)
+    public function update(User $user, User $model)
     {
-        //
+        return $user->is($model);
     }
 
     /**

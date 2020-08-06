@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\CrewMember;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 
 class CrewMemberPolicy
 {
@@ -18,7 +19,7 @@ class CrewMemberPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->isBoard();
     }
 
     /**
@@ -30,7 +31,7 @@ class CrewMemberPolicy
      */
     public function view(User $user, CrewMember $crewMember)
     {
-        //
+        return $crewMember->user()->is($user);
     }
 
     /**
@@ -41,7 +42,7 @@ class CrewMemberPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +54,7 @@ class CrewMemberPolicy
      */
     public function update(User $user, CrewMember $crewMember)
     {
-        //
+        return $crewMember->user()->is($user);
     }
 
     /**
@@ -65,7 +66,7 @@ class CrewMemberPolicy
      */
     public function delete(User $user, CrewMember $crewMember)
     {
-        //
+        return $crewMember->user()->is($user);
     }
 
     /**
@@ -77,7 +78,7 @@ class CrewMemberPolicy
      */
     public function restore(User $user, CrewMember $crewMember)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +90,6 @@ class CrewMemberPolicy
      */
     public function forceDelete(User $user, CrewMember $crewMember)
     {
-        //
+        return false;
     }
 }

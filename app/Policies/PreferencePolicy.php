@@ -18,7 +18,7 @@ class PreferencePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class PreferencePolicy
      */
     public function view(User $user, Preference $preference)
     {
-        //
+        return true;
     }
 
     /**
@@ -41,7 +41,7 @@ class PreferencePolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class PreferencePolicy
      */
     public function update(User $user, Preference $preference)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class PreferencePolicy
      */
     public function delete(User $user, Preference $preference)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +77,7 @@ class PreferencePolicy
      */
     public function restore(User $user, Preference $preference)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class PreferencePolicy
      */
     public function forceDelete(User $user, Preference $preference)
     {
-        //
+        return false;
     }
 }

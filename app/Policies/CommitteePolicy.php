@@ -18,7 +18,7 @@ class CommitteePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->isBoard();
     }
 
     /**
@@ -30,7 +30,7 @@ class CommitteePolicy
      */
     public function view(User $user, Committee $committee)
     {
-        //
+        return $user->isBoard();
     }
 
     /**
@@ -41,7 +41,7 @@ class CommitteePolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->isInTM();
     }
 
     /**
@@ -53,7 +53,7 @@ class CommitteePolicy
      */
     public function update(User $user, Committee $committee)
     {
-        //
+        return $user->isInTM();
     }
 
     /**
@@ -65,7 +65,7 @@ class CommitteePolicy
      */
     public function delete(User $user, Committee $committee)
     {
-        //
+        return $user->isInTM();
     }
 
     /**
@@ -77,7 +77,7 @@ class CommitteePolicy
      */
     public function restore(User $user, Committee $committee)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class CommitteePolicy
      */
     public function forceDelete(User $user, Committee $committee)
     {
-        //
+        return false;
     }
 }

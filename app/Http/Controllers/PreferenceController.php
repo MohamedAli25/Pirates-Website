@@ -16,7 +16,7 @@ class PreferenceController extends Controller
     public function index()
     {
         $eventId = request('event_id');
-        $event = Event::find($eventId);
+        $event = Event::findOrFail($eventId);
         return view('preference.show_all', [
             'preferences' => $event->preferences
         ]);
@@ -30,7 +30,7 @@ class PreferenceController extends Controller
     public function create()
     {
         $eventId = request('event_id');
-        $event = Event::find($eventId);
+        $event = Event::findOrFail($eventId);
         return view('preference.create', [
             'event' => $event
         ]);

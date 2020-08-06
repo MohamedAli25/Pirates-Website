@@ -14,7 +14,9 @@ class PositionController extends Controller
      */
     public function index()
     {
-        //
+        return view('position.show_all', [
+            'positions' => Position::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class PositionController extends Controller
      */
     public function create()
     {
-        //
+        return view('event.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+        Position::create($validatedData);
+        return redirect("/position");
     }
 
     /**
@@ -46,7 +52,7 @@ class PositionController extends Controller
      */
     public function show(Position $position)
     {
-        //
+        return view('position.show_one', compact('position'));
     }
 
     /**
@@ -57,7 +63,7 @@ class PositionController extends Controller
      */
     public function edit(Position $position)
     {
-        //
+        return view('position.edit', compact('position'));
     }
 
     /**
@@ -69,7 +75,11 @@ class PositionController extends Controller
      */
     public function update(Request $request, Position $position)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+        $position->update($validatedData);
+        return redirect("/position");
     }
 
     /**
@@ -80,6 +90,7 @@ class PositionController extends Controller
      */
     public function destroy(Position $position)
     {
-        //
+        $position->delete();
+        return redirect("/position");
     }
 }

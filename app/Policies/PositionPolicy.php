@@ -18,7 +18,7 @@ class PositionPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -30,7 +30,7 @@ class PositionPolicy
      */
     public function view(User $user, Position $position)
     {
-        //
+        return false;
     }
 
     /**
@@ -41,7 +41,7 @@ class PositionPolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class PositionPolicy
      */
     public function update(User $user, Position $position)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class PositionPolicy
      */
     public function delete(User $user, Position $position)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +77,7 @@ class PositionPolicy
      */
     public function restore(User $user, Position $position)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class PositionPolicy
      */
     public function forceDelete(User $user, Position $position)
     {
-        //
+        return false;
     }
 }

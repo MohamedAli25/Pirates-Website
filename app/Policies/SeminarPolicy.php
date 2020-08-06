@@ -18,7 +18,12 @@ class SeminarPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return true;
+    }
+
+    public function viewAnyDetailed(User $user)
+    {
+        return false;
     }
 
     /**
@@ -30,7 +35,12 @@ class SeminarPolicy
      */
     public function view(User $user, Seminar $seminar)
     {
-        //
+        return true;
+    }
+
+    public function viewDetailed(User $user, Seminar $seminar)
+    {
+        return false;
     }
 
     /**
@@ -41,7 +51,7 @@ class SeminarPolicy
      */
     public function create(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -53,7 +63,7 @@ class SeminarPolicy
      */
     public function update(User $user, Seminar $seminar)
     {
-        //
+        return false;
     }
 
     /**
@@ -65,7 +75,7 @@ class SeminarPolicy
      */
     public function delete(User $user, Seminar $seminar)
     {
-        //
+        return false;
     }
 
     /**
@@ -77,7 +87,7 @@ class SeminarPolicy
      */
     public function restore(User $user, Seminar $seminar)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +99,6 @@ class SeminarPolicy
      */
     public function forceDelete(User $user, Seminar $seminar)
     {
-        //
+        return false;
     }
 }

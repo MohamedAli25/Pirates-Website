@@ -18,7 +18,7 @@ class EventApplicantPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return false;
     }
 
     /**
@@ -30,7 +30,7 @@ class EventApplicantPolicy
      */
     public function view(User $user, EventApplicant $eventApplicant)
     {
-        //
+        return $eventApplicant->user()->is($user);
     }
 
     /**
@@ -41,7 +41,7 @@ class EventApplicantPolicy
      */
     public function create(User $user)
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class EventApplicantPolicy
      */
     public function update(User $user, EventApplicant $eventApplicant)
     {
-        //
+        return $eventApplicant->user()->is($user);
     }
 
     /**
@@ -65,7 +65,7 @@ class EventApplicantPolicy
      */
     public function delete(User $user, EventApplicant $eventApplicant)
     {
-        //
+        return $eventApplicant->user()->is($user);
     }
 
     /**
@@ -77,7 +77,7 @@ class EventApplicantPolicy
      */
     public function restore(User $user, EventApplicant $eventApplicant)
     {
-        //
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class EventApplicantPolicy
      */
     public function forceDelete(User $user, EventApplicant $eventApplicant)
     {
-        //
+        return false;
     }
 }
