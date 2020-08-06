@@ -30,6 +30,9 @@ class AuthServiceProvider extends ServiceProvider
     public const pmCommitteeId = 0;
     public const tmCommitteeId = 0;
 
+    // Admin ID
+    public const adminId = 0;
+
     /**
      * The policy mappings for the application.
      *

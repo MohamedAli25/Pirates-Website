@@ -59,6 +59,12 @@ class User extends Authenticatable
         return CrewMember::where('user_id', $this->id)->isNotEmpty();
     }
 
+    // Admin Check
+    public function isAdmin()
+    {
+        return $this->id === AuthServiceProvider::adminId;
+    }
+
     // Position Check
     public function isMember()
     {
