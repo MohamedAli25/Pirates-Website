@@ -5,12 +5,33 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
+.nav-item {
+  margin: 8px;
+}
+
 .nav-link {
   color: #744ba3;
   font-size: 20px;
   position: relative;
   padding: 0 !important;
-  margin: 8px;
+  border: none;
+}
+
+.nav-link:hover {
+  border: none;
+}
+
+.nav-link:visited {
+  border: none;
+}
+
+.nav-link:active {
+  border: none;
+}
+
+.nav-link:focus {
+  border: none !important;
+  outline: none;
 }
 
 .nav-link::before {
@@ -67,6 +88,29 @@
   color: purple;
 }
 
+#sidenavbar a:focus {
+  outline: none;
+}
+
+#sidenavbar a:hover {
+  text-decoration: none;
+}
+
+#sidenavbar input {
+  color: purple;
+  border: none;
+  background: transparent;
+  padding: 0;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+#sidenavbar input:focus {
+  border: none;
+  outline: none;
+}
+
 .bars {
   font-size: 20px;
 }
@@ -74,71 +118,6 @@
 .tracking {
   -webkit-animation: tracking 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   animation: tracking 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-
-@-webkit-keyframes tracking {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0.6;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.trackingo {
-  -webkit-animation: trackingo 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  animation: trackingo 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
-
-@keyframes tracking {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0.6;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes trackingo {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-}
-
-@keyframes trackingo {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
 }
 
 .dark-layer {

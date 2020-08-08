@@ -16,50 +16,34 @@
             <div class="heading-wrapper">
                 <h2 class="heading-undelined">Edit Event Applicant</h2>
             </div>
-            <form action="#">
+            <form action="/event-applicant/{{ $eventApplicant->id }}" method="POST">
                 @csrf
-                <div class="form-group">
-                    <label for="name">Enter User Email</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="User Email">
-                </div>
-                <div class="form-group">
-                  <label for="event">Choose Event</label>
-                  <select class="form-control" id="event" name="event">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
+                @method('PATCH')
+                
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                <input type="hidden" name="event_id" value="{{ $event->id }}">
                 <div class="form-group">
                   <label for="time_slot">Choose Time Slot</label>
                   <select class="form-control" id="time_slot" name="time_slot">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    @foreach ($timeSlots as $timeSlot)
+                        <option value="{{ $timeSlot->id }}">{{ $timeSlot->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="first_preference">Choose First Preference</label>
-                  <select class="form-control" id="first_preference" id="first_preference">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select class="form-control" id="first_preference" name="first_preference">
+                    @foreach ($preferences as $preference)
+                        <option value="{{ $preference->id }}">{{ $preference->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="second_preference">Choose Second Preference</label>
-                  <select class="form-control" id="second_preference" id="second_preference">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select class="form-control" id="second_preference" name="second_preference">
+                    @foreach ($preferences as $preference)
+                        <option value="{{ $preference->id }}">{{ $preference->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="d-flex justify-content-center align-items -center">

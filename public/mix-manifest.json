@@ -6,6 +6,10 @@
     "/css/crew_member/create.css": "/css/crew_member/create.css",
     "/css/event/create.css": "/css/event/create.css",
     "/css/event/edit.css": "/css/event/edit.css",
+    "/css/event/show_all.css": "/css/event/show_all.css",
+    "/css/event/show_all_detailed.css": "/css/event/show_all_detailed.css",
+    "/css/event/show_one.css": "/css/event/show_one.css",
+    "/css/event/show_one_detailed.css": "/css/event/show_one_detailed.css",
     "/css/event_applicant/create.css": "/css/event_applicant/create.css",
     "/css/event_applicant/edit.css": "/css/event_applicant/edit.css",
     "/css/position/create.css": "/css/position/create.css",
@@ -17,5 +21,6 @@
     "/css/speaker/create.css": "/css/speaker/create.css",
     "/css/speaker/edit.css": "/css/speaker/edit.css",
     "/css/time_slot/create.css": "/css/time_slot/create.css",
-    "/css/time_slot/edit.css": "/css/time_slot/edit.css"
+    "/css/time_slot/edit.css": "/css/time_slot/edit.css",
+    "/css/user/sign.css": "/css/user/sign.css"
 }

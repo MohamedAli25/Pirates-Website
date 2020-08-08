@@ -6,6 +6,7 @@ use App\Event;
 use App\EventApplicant;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EventApplicantController extends Controller
 {
@@ -14,10 +15,13 @@ class EventApplicantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $eventId = request('event_id');
+        $event = Event::findOrFail($eventId);
         return view('event_applicant.show_all', [
-            'eventApplicants' => EventApplicant::all()
+            'event' => $event,
+            'eventApplicants' => $event->eventApplicants()
         ]);
     }
 
@@ -28,9 +32,9 @@ class EventApplicantController extends Controller
      */
     public function create(Request $request)
     {
-        $user = new User(); // To be changed with the authenticated user
+        $user = Auth::user();
         $eventId = request('event_id');
-        $event = Event::find($eventId);
+        $event = Event::findOrFail($eventId);
         return view('event_applicant.create', [
             'user' => $user,
             'event' => $event,
@@ -55,7 +59,7 @@ class EventApplicantController extends Controller
             'second_preference_id' => 'required|numeric',
         ]);
         EventApplicant::create($validatedData);
-        return redirect("/event");
+        return redirect("/event/" . request('event_id'));
     }
 
     /**
@@ -77,9 +81,9 @@ class EventApplicantController extends Controller
      */
     public function edit(Request $request, EventApplicant $eventApplicant)
     {
-        $user = new User(); // To be changed with the authenticated user
+        $user = Auth::user();
         $eventId = request('event_id');
-        $event = Event::find($eventId);
+        $event = Event::findOrFail($eventId);
         return view('committee.edit', [
             'eventApplicant' => $eventApplicant,
             'user' => $user,
@@ -106,7 +110,7 @@ class EventApplicantController extends Controller
             'second_preference_id' => 'required|numeric',
         ]);
         $eventApplicant->update($validatedData);
-        return redirect("/event");
+        return redirect("/event/" . request('event_id'));
     }
 
     /**

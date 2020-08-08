@@ -41,7 +41,7 @@ class CommitteePolicy
      */
     public function create(User $user)
     {
-        return $user->isInTM();
+        return false;
     }
 
     /**
@@ -53,7 +53,7 @@ class CommitteePolicy
      */
     public function update(User $user, Committee $committee)
     {
-        return $user->isInTM();
+        return false;
     }
 
     /**
@@ -65,7 +65,7 @@ class CommitteePolicy
      */
     public function delete(User $user, Committee $committee)
     {
-        return $user->isInTM();
+        return false;
     }
 
     /**

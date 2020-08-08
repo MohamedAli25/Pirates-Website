@@ -103,8 +103,8 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function redirectTo()
-    {
-        return '/home';
-    }
+    // protected function redirectTo()
+    // {
+    //     return '/home';
+    // }
 }

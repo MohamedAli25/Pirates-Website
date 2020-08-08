@@ -8,6 +8,7 @@
 
 @section('content')
 <form action="#" method="post" class="sign-box">
+  @csrf
 
     <h2>Sign In</h2>
 

@@ -14,6 +14,7 @@ class CommitteeController extends Controller
      */
     public function index()
     {
+        // $this->authorize('viewAny');
         return view('committee.show_all', [
             'committees' => Committee::all()
         ]);
@@ -26,6 +27,7 @@ class CommitteeController extends Controller
      */
     public function indexDetailed()
     {
+        // $this->authorize('viewAny');
         return view('committee.show_all_detailed', [
             'committees' => Committee::all()
         ]);
@@ -38,6 +40,7 @@ class CommitteeController extends Controller
      */
     public function create()
     {
+        // $this->authorize('create');
         return view('committee.create');
     }
 
@@ -49,6 +52,7 @@ class CommitteeController extends Controller
      */
     public function store(Request $request)
     {
+        // $this->authorize('create');
         $validatedData = $request->validate([
             'name' => 'required'
         ]);
@@ -64,6 +68,7 @@ class CommitteeController extends Controller
      */
     public function show(Committee $committee)
     {
+        // $this->authorize('view');
         return view('committee.show_one', compact('committee'));
     }
 
@@ -75,6 +80,7 @@ class CommitteeController extends Controller
      */
     public function showDetailed(Committee $committee)
     {
+        // $this->authorize('view');
         return view('committee.show_one_detailed', compact('committee'));
     }
 
@@ -86,6 +92,7 @@ class CommitteeController extends Controller
      */
     public function edit(Committee $committee)
     {
+        // $this->authorize('update');
         return view('committee.edit', compact('committee'));
     }
 
@@ -98,6 +105,7 @@ class CommitteeController extends Controller
      */
     public function update(Request $request, Committee $committee)
     {
+        // $this->authorize('update');
         $validatedData = $request->validate([
             'name' => 'required',
         ]);
@@ -113,6 +121,7 @@ class CommitteeController extends Controller
      */
     public function destroy(Committee $committee)
     {
+        // $this->authorize('delete');
         $committee->delete();
         return redirect("/committee/show-detailed");
     }

@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    public static function shownEvents()
+    {
+        return Event::all()->filter(function ($event) {
+            return $event->shown;
+        });
+    }
+
     protected $fillable = ['name', 'description', 'photo', 'shown', 'available'];
 
     public function preferences()

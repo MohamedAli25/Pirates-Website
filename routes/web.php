@@ -4,25 +4,32 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Testing
+// Route::get('/', 'Auth\ResetPasswordController@showResetForm');
 Route::get('/', function () {
-    return view('try');
+    return view('event.show_one_detailed');
 });
+// Route::get('/', function () {
+//     return view('user.confirm_password');
+// });
+
+// Home Redirect
+// Route::redirect('/', "/home");
 
 // AdminController
-Route::get('/admin/admin-panel', 'AdminController@showAdminPanel');
+Route::get('/admin/admin-panel', 'AdminController@showAdminPanel')->name('admin_panel');
 
 // CommitteeController
-Route::resource('/committee', 'CommitteeController');
 Route::get('/committee/show-detailed', 'CommitteeController@indexDetailed')->name('committee.indexDetailed');
-Route::get('/committee/{id}/show-detailed', 'CommitteeController@showDetailed')->name('committee.showDetailed');
+Route::get('/committee/{committee}/show-detailed', 'CommitteeController@showDetailed')->name('committee.showDetailed');
+Route::resource('/committee', 'CommitteeController');
 
 // CrewMember
 Route::resource('/crew-member', 'CrewMemberController');
 
 // EventController
-Route::resource('/event', 'EventController');
 Route::get('/event/show-detailed', 'EventController@indexDetailed')->name('event.indexDetailed');
-Route::get('/event/{id}/show-detailed', 'EventController@showDetailed')->name('event.showDetailed');
+Route::get('/event/{event}/show-detailed', 'EventController@showDetailed')->name('event.showDetailed');
+Route::resource('/event', 'EventController');
 
 // EventApplicant
 Route::resource('/event-applicant', 'EventApplicantController');
@@ -42,9 +49,9 @@ Route::resource('/position', 'PositionController');
 Route::resource('/preference', 'PreferenceController');
 
 // SeminarController
-Route::resource('/seminar', 'SeminarController');
 Route::get('/seminar/detailed', 'SeminarController@indexDetailed')->name('seminar.indexDetailed');
-Route::get('/seminar/{id}/detailed', 'SeminarController@showDetailed')->name('seminar.indexDetailed');
+Route::get('/seminar/{seminar}/detailed', 'SeminarController@showDetailed')->name('seminar.indexDetailed');
+Route::resource('/seminar', 'SeminarController');
 
 // SpeakerController
 Route::resource('/speaker', 'SpeakerController');
@@ -53,8 +60,8 @@ Route::resource('/speaker', 'SpeakerController');
 Route::resource('/time-slot', 'TimeSlotController');
 
 // UserController
+Route::get('/user/{user}/show-detailed', 'UserController@showOneDetailed')->name('user.indexDetailed');
 Route::resource('/user', 'UserController');
-Route::get('/user/{id}/show-detailed', 'UserController@showOneDetailed')->name('user.indexDetailed');
 
 // Auth Routes
 Auth::routes();

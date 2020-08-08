@@ -16,7 +16,7 @@
             <div class="heading-wrapper">
                 <h2 class="heading-undelined">Create a Position</h2>
             </div>
-            <form action="#">
+            <form action="/position" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="name">Enter Position Name</label>

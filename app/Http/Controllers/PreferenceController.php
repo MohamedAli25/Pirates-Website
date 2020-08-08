@@ -18,7 +18,8 @@ class PreferenceController extends Controller
         $eventId = request('event_id');
         $event = Event::findOrFail($eventId);
         return view('preference.show_all', [
-            'preferences' => $event->preferences
+            'event' => $event,
+            'preferences' => $event->preferences()
         ]);
     }
 

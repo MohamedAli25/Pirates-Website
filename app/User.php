@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'university', 'faculty', 'department', 'academic_year'
+        'first_name', 'last_name', 'email', 'password', 'university', 'faculty', 'department', 'academic_year'
     ];
 
     /**
@@ -51,6 +51,11 @@ class User extends Authenticatable
     public function crewMember()
     {
         return $this->hasOne(CrewMember::class);
+    }
+
+    public function name()
+    {
+        return $this->first_name . " " . $this->last_name;
     }
 
     // Crew Member Check

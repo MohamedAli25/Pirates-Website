@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\CrewMember;
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
@@ -16,7 +18,7 @@ class EventController extends Controller
     public function index()
     {
         return view('event.show_all', [
-            'events' => Event::all()
+            'events' => Event::shownEvents()
         ]);
     }
 
@@ -71,7 +73,21 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        return view('event.show_one', compact('event'));
+        if (Auth::check()) {
+            $didApply = CrewMember::where([
+                ['event_id', '=', $event->id],
+                ['user_id', '=', Auth::id()]
+            ])->get()->isNotEmpty();
+            return view('event.show_one', [
+                'event' => $event,
+                'didApply' => $didApply
+            ]);
+        } else {
+            return view('event.show_one', [
+                'event' => $event,
+                'didApply' => false
+            ]);
+        }
     }
 
     /**
@@ -105,6 +121,7 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
+        // dd(request());
         $validatedData = $request->validate([
             'name' => 'required',
             'description' => 'required'
@@ -113,6 +130,7 @@ class EventController extends Controller
         $validatedData['available'] = $request->has('available');
         if ($request->file('photo')) {
             $photoPathOld = str_replace('storage', 'public', $event->photo);
+            $photoPathOld = $event->photo;
             Storage::delete($photoPathOld);
             $photoPathNew = Storage::putFile('public/event', $request->file('photo'));
             $validatedData['photo'] = str_replace('public', 'storage', $photoPathNew);

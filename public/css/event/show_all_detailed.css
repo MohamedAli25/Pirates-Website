@@ -1,0 +1,115 @@
+.content {
+  margin: 30px 0;
+}
+
+.content .heading-wrapper {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .page-heading {
+  font-size: 3.2rem;
+  position: relative;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: center;
+  margin: 0 auto 0.5rem auto;
+}
+
+.content .page-heading::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1.2rem;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  background: #744ba3;
+}
+
+.content .events {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 35px;
+}
+
+.content .events .event .event-img-container {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.content .events .event .event-img-container .event-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transition-property: transform;
+  transition-duration: 700ms;
+}
+
+.content .events .event .event-img-container:hover .event-img {
+  transform: scale(1.3);
+}
+
+.content .events .event .event-body .available .fa {
+  color: #7A7A7A;
+  display: inline-block;
+  font-size: 11.2px;
+}
+
+.content .events .event .event-body .available .is-available {
+  color: #744ba3;
+  font-size: 11.2px;
+  display: inline-block;
+  margin: 0;
+}
+
+.content .events .event .event-body .event-name {
+  margin: 0 0 20px 0;
+  font-size: 16.8px;
+  line-height: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #7A7A7A;
+}
+
+.content .events .event .event-body .event-description {
+  color: #7A7A7A;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  margin: 14px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.content .events .event .event-body .read-more-btn {
+  outline: none;
+  text-decoration: none;
+  color: #744ba3;
+}
+
+@media (max-width: 992px) {
+  .content .events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .content .events {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
